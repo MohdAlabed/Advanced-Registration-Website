@@ -1,0 +1,147 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Logedin.Master.cs" Inherits="RecommendationSystem.Loged_in" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+
+    <%--BootStrap CSS--%>
+    <link href="BootStrap/CSS/bootstrap.min.css" rel="stylesheet" />
+    <%--FontAwesome CSS--%>
+    <link href="FontAwesome/css/all.css" rel="stylesheet" />
+
+    <%--BootStrap JavaScript--%>
+    <script src="BootStrap/JavaScript/jquery-3.3.1.slim.min.js"></script>
+    <script src="BootStrap/JavaScript/popper.min.js"></script>
+    <script src="BootStrap/JavaScript/bootstrap.min.js"></script>
+
+    <%--CSS Style Sheet--%>
+    <link href="StyleSheets/Main.css" rel="stylesheet" />
+
+    <%--JavaScript--%>
+    <script src="Scripts/Tabs.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body onload="sidebarF()">
+    <form id="form1" runat="server">
+
+        <div class="sidebar">
+            <div class="logo-details">
+                <img src="Images/University_of_Jordan_Logo.png" />
+                <div class="logo_name">Recommendation System</div>
+                <i class="fa-solid fa-circle-chevron-right" id="btn"></i>
+            </div>
+
+            <!-- Admin Sidebar Content -->
+            <ul class="nav-list" id="adminbtns" runat="server">
+                <li>
+                    <i class='fa-solid fa-magnifying-glass'></i>
+                    <input type="text" placeholder="Search...">
+                    <span class="tooltip">Search</span>
+                </li>
+                <li>
+                    <a href="adminHome.aspx">
+                        <i class="fa-solid fa-house-user"></i>
+                        <span class="links_name">Home</span>
+                    </a>
+                    <span class="tooltip">Home</span>
+                </li>
+                <li>
+                    <a href="adminRecommended.aspx">
+                        <i class="fa-solid fa-upload"></i>
+                        <span class="links_name">Upload Registration
+                            <br />
+                            Schedule</span>
+                    </a>
+                    <span class="tooltip">Upload Registration Schedule</span>
+                </li>
+                <li>
+                    <a href="adminMajorPlan.aspx">
+                        <i class="fa-solid fa-list-check"></i>
+                        <span class="links_name">Major Plan</span>
+                    </a>
+                    <span class="tooltip">Major Plan</span>
+                </li>
+                <li>
+                    <a href="admin_Management.aspx">
+                        <i class="fa-solid fa-people-roof"></i>
+                        <span class="links_name">User Management</span>
+                    </a>
+                    <span class="tooltip">User Management</span>
+                </li>
+                <li class="profile">
+                    <div class="profile-details">
+                        <i class="fa-solid fa-user"></i>
+                        <div class="name_job">
+                            <div class="name" id="adname" runat="server"></div>
+                        </div>
+                    </div>
+                    <asp:LinkButton ID="logoutA" runat="server" OnClick="LogoutA_Click"><i class="fa-solid fa-arrow-right-from-bracket" id="log_outA"></i></asp:LinkButton>
+                </li>
+            </ul>
+
+            <!-- Student Sidebar Content -->
+            <ul class="nav-list" id="studentbtns" runat="server">
+                <li>
+                    <i class='fa-solid fa-magnifying-glass'></i>
+                    <input type="text" placeholder="Search...">
+                    <span class="tooltip">Search</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-house-user"></i>
+                        <span class="links_name">Home</span>
+                    </a>
+                    <span class="tooltip">Home</span>
+                </li>
+                <li>
+                    <a href="Recommended.aspx">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <span class="links_name">Recommended
+                            <br />
+                            Schedule</span>
+                    </a>
+                    <span class="tooltip">Recommended Schedule</span>
+                </li>
+                <li>
+                    <a href="MajorPlan.aspx">
+                        <i class="fa-solid fa-list-check"></i>
+                        <span class="links_name">Major Plan</span>
+                    </a>
+                    <span class="tooltip">Major Plan</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span class="links_name">Help Center</span>
+                    </a>
+                    <span class="tooltip">Help Center</span>
+                </li>
+                <li class="profile">
+                    <div class="profile-details">
+                        <i class="fa-solid fa-user"></i>
+                        <div class="name_job">
+                            <div class="name" id="stdname" runat="server"></div>
+                            <div class="job" id="stdmajor" runat="server"></div>
+                        </div>
+                    </div>
+                    <asp:LinkButton ID="logoutS" runat="server" OnClick="LogoutS_Click"><i class="fa-solid fa-arrow-right-from-bracket" id="log_outS"></i></asp:LinkButton>
+                </li>
+            </ul>
+        </div>
+
+        <section class="home-section">
+            <!--Main Content Placeholder-->
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <!--End of Main Content Placeholder-->
+        </section>
+    </form>
+
+</body>
+</html>

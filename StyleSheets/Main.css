@@ -1,0 +1,358 @@
+﻿.box-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(16rem, 1fr))[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 2rem;
+}
+
+.box {
+    width: 100%;
+    padding: 1.2rem 1.4rem;
+    border: $border;
+    font-size: 15px;
+    margin: .7rem 0;
+}
+
+.box1 {
+    width: 100%;
+    padding: 1.2rem 1.4rem;
+    border: $border;
+    font-size: 20px;
+    margin: .7rem 0;
+}
+
+.btnM {
+    background-color: black;
+    color: white;
+    border: 0.5px outset black;
+    float: right;
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+}
+
+.btnM:hover {
+    background-color: #f8f9fa;
+    color: #00a650;
+}
+
+a {
+    color: black;
+}
+
+a:hover{
+   text-decoration: none;
+   color: #00a650;
+}
+
+h5 {
+    font-weight: bold;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/*--- Sidebar ---*/
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 78px;
+    background-color: #e3f2fd;
+    padding: 6px 14px;
+    z-index: 99;
+    transition: all 0.5s ease;
+}
+
+    .sidebar img {
+        width: 40px;
+        height: 50px;
+        margin-left: 4px;
+        margin-top: 7px;
+    }
+
+    .sidebar.open {
+        width: 250px;
+    }
+
+    .sidebar .logo-details {
+        height: 60px;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+        .sidebar .logo-details .icon {
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .sidebar .logo-details .logo_name {
+            font-size: 18px;
+            font-weight: 600;
+            opacity: 0;
+            margin-left: 15px;
+            margin-top: 7px;
+        }
+        /*-------*/
+    .sidebar.open .logo-details .icon,
+    .sidebar.open .logo-details .logo_name {
+        opacity: 1;
+        transition: all 1s ease;
+    }
+
+    .sidebar .logo-details #btn {
+        position: absolute;
+        top: 50%;
+        right: -40px;
+        transform: translateY(-50%) rotate(0deg);
+        height: 25px;
+        width: 25px;
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        cursor: pointer;
+        transition: all 0.5s ease;
+    }
+
+    .sidebar.open .logo-details #btn {
+        transform: translateY(-50%) rotate(-180deg);
+    }
+
+    .sidebar i {
+        height: 60px;
+        min-width: 50px;
+        font-size: 28px;
+        text-align: center;
+        line-height: 60px;
+    }
+
+    .sidebar .nav-list {
+        margin-top: 20px;
+        height: 100%;
+    }
+
+    .sidebar li {
+        position: relative;
+        margin: 8px 0;
+        list-style: none;
+    }
+
+        .sidebar li .tooltip {
+            position: absolute;
+            top: -20px;
+            left: calc(100% + 15px);
+            z-index: 3;
+            background: #fff;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: 400;
+            opacity: 0;
+            white-space: nowrap;
+            pointer-events: none;
+            transition: 0s;
+        }
+
+        .sidebar li:hover .tooltip {
+            opacity: 1;
+            pointer-events: auto;
+            transition: all 0.4s ease;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+    .sidebar.open li .tooltip {
+        display: none;
+    }
+
+    .sidebar input {
+        font-size: 15px;
+        color: black;
+        font-weight: 400;
+        outline: none;
+        height: 50px;
+        width: 100%;
+        width: 50px;
+        border: none;
+        border-radius: 12px;
+        transition: all 1s ease;
+        background: white;
+    }
+
+    .sidebar.open input {
+        padding: 0 20px 0 55px;
+        width: 100%;
+    }
+
+    .sidebar .fa-magnifying-glass {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        font-size: 20px;
+        background: black;
+        color: white;
+    }
+
+    .sidebar.open .fa-magnifying-glass:hover {
+        background: white;
+        color: #00a650;
+    }
+
+    .sidebar .fa-magnifying-glass:hover {
+        background: white;
+        color: #00a650;
+    }
+
+    .sidebar li a {
+        display: flex;
+        width: 100%;
+        border-radius: 12px;
+        align-items: center;
+        text-decoration: none;
+        background-color: black;
+        color: white;
+    }
+
+        .sidebar li a:hover {
+            background-color: white;
+            color: #00a650;
+        }
+
+        .sidebar li a .links_name {
+            font-size: 15px;
+            font-weight: 400;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+    .sidebar.open li a .links_name {
+        opacity: 1;
+        transition: 1s ease;
+        pointer-events: auto;
+    }
+
+    .sidebar li i {
+        height: 50px;
+        line-height: 50px;
+        font-size: 18px;
+        border-radius: 12px;
+    }
+
+    .sidebar li.profile {
+        position: fixed;
+        height: 60px;
+        width: 78px;
+        left: 0;
+        bottom: -8px;
+        padding: 10px 14px;
+        background: #f8f9fa;
+        transition: all 0.5s ease;
+        overflow: hidden;
+    }
+
+    .sidebar.open li.profile {
+        width: 250px;
+    }
+
+    .sidebar li .profile-details {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .sidebar li img {
+        height: 45px;
+        width: 45px;
+        object-fit: cover;
+        border-radius: 6px;
+        margin-right: 10px;
+    }
+
+    .sidebar li.profile .name,
+    .sidebar li.profile .job {
+        font-size: 15px;
+        font-weight: 400;
+        color: black;
+        white-space: nowrap;
+    }
+
+    .sidebar li.profile .job {
+        font-size: 12px;
+    }
+
+    .sidebar .profile #log_outS,
+    .sidebar .profile #log_outA {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        background-color: white;
+        width: 100%;
+        height: 60px;
+        line-height: 60px;
+        border-radius: 0px;
+        transition: all 0.5s ease;
+        color: black;
+    }
+
+    .sidebar.open .profile #log_outS,
+    .sidebar.open .profile #log_outA {
+        width: 50px;
+        background: none;
+    }
+
+.home-section {
+    position: fixed;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    top: 0;
+    left: 78px;
+    width: calc(100% - 78px);
+    transition: all 0.5s ease;
+    z-index: 2;
+    overflow: auto;
+}
+
+.sidebar.open ~ .home-section {
+    left: 250px;
+    width: calc(100% - 250px);
+}
+
+.home-section .text {
+    display: inline-block;
+    color: #11101d;
+    font-size: 25px;
+    font-weight: 500;
+    margin: 18px
+}
+
+@media (max-width: 420px) {
+    .sidebar li .tooltip {
+        display: none;
+    }
+}
+
+
+
+/*
+#e3f2fd blue
+#ed1c24 red
+#f8f9fa gray
+*/
+
+/*
+#form1*/
+

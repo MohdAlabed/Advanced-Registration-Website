@@ -1,0 +1,28 @@
+﻿.container-fluid {
+    margin-top: 1rem;
+    height: 100vh;
+    overflow: auto;
+}
+
+.btn {
+    border-radius: unset;
+    display: grid;
+    align-items: center;
+}
+
+.form-control {
+    border-radius: unset;
+}
+
+.required_field {
+    color: red;
+    font-size:larger;
+    position:absolute;
+    top: 0;
+    right: 0;
+}
+
+.regular_exp {
+    color: red;
+    position: absolute;
+}

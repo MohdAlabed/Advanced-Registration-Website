@@ -1,0 +1,120 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.Master.cs" Inherits="RecommendationSystem.Template" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    
+    <%--BootStrap CSS--%>
+    <link href="BootStrap/CSS/bootstrap.min.css" rel="stylesheet" />
+    <%--DataTable CSS--%>
+    <link href="DataTables/CSS/jquery.dataTables.min.css" rel="stylesheet" />
+    <%--FontAwesome CSS--%>
+    <link href="FontAwesome/css/all.css" rel="stylesheet" />
+
+    <%--BootStrap JavaScript--%>
+    <script src="BootStrap/JavaScript/jquery-3.3.1.slim.min.js"></script>
+    <script src="BootStrap/JavaScript/popper.min.js"></script>
+    <script src="BootStrap/JavaScript/bootstrap.min.js"></script>
+
+    <%--CSS Style Sheet--%>
+    <link href="StyleSheets/Main.css" rel="stylesheet" />
+    <link rel="icon" href="./images/UJ_icon.ico" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+  
+    <header  style="
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 999;"
+>
+      
+      
+    <form id="form1" runat="server" class="">
+        <div class="headers">
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd">
+                <a class="navbar-brand" herf="#">
+                    <img src="Images/University_of_Jordan_Logo.png" width="40px" />
+                    Recommendation System
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse links" id="navbarTogglerDemo03">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+                        <li class="ul li, ol li">
+                           
+                            <a class=" nav-link  "  href="#" "  >Home</a>
+                        </li>
+                
+                         <li class="ul li, ol li">
+                            <a class="nav-link" href="#servies">Servies</a>
+                        </li>
+                        <li class="ul li, ol li">
+                            <a class="nav-link" href="#abut-us">About Us</a><!--add qustion mark icon-->
+                        </li>
+                            <li class="ul li, ol li">
+                            <a class="nav-link" href="#help">Help Center</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <ul class="navbar-nav">
+                    <li class="nav-item active button">
+                        <asp:Button ID="tologin" CssClass="btnM" runat="server" OnClick="tologin_Click" Text="Login" />
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        
+        </header>
+        <!--Main Content Placeholder-->
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <!--End of Main Content Placeholder-->
+
+        <footer class="bg-light">
+            <div class="box-container">
+                <div class="box1" align="center">
+                    <h5>Jordan University Recommendation System </h5>
+                    <div class="share">
+                        <a href="http://ju.edu.jo/home.aspx" class="fas fa-globe"></a>&nbsp
+                        <a href="https://www.facebook.com/ujnews/" class="fab fa-facebook-f"></a>&nbsp
+                        <a href="https://twitter.com/uj_news?lang=en" class="fab fa-twitter"></a>&nbsp
+                        <a href="https://www.instagram.com/the.university.of.jordan/?hl=en" class="fab fa-instagram"></a>
+                    </div>
+                </div>
+                <div class="box">
+                    <h5>Explore</h5>
+                    <a href="#abut-us" class="link">About Us  </a><br>
+                    <a href="#abut-us" class="link">Our Story</a>
+                </div>
+                <div class="box">
+                    <h5>Support</h5>
+                    <a href="#help" class="link">Help & Support</a><br>
+                    <a href="#help" class="link">FAQs</a>
+                </div>
+                <div class="box">
+                    <h5>Servies</h5>
+                    <a href="#servies" class="">MajorPlan    </a><br>
+                   <a href="#servies" class=""> Recommended Schedule    </a>
+                </div>
+            </div>
+            
+        </footer>
+    <p align="center" style="background-color: #e3f2fd ;padding: 10px;    margin-bottom: 0; ">&copy 2023 Jordan University, All Rights Reverved.</p>
+    </form>
+</body>
+</html>

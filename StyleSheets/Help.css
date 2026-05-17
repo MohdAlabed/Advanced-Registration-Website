@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul{
+  list-style: none;
+}
+
+.containeree a {
+    color: #e3f2fd;
+    text-decoration: none;
+    font-family: Roboto, sans-serif;
+    /* padding: 2rem 1.25rem; */
+}
+.containeree a:hover {
+  text-decoration: underline;
+}
+
+.containeree {	
+  width: 100%;
+  margin: 100px auto;
+  padding-left: 100px;
+  padding-right: 100px;
+
+}
+@media (max-width:776px) {
+    .containeree {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+.containeree h1 {
+    font-size: 42px;
+    font-weight: 300;
+    color: #e3f2fd;
+    margin-bottom: 40px;
+}
+    .containeree h1 a:hover, .container h1 a:focus {
+        color: #e3f2fd;
+    }
+.containeree p {
+  line-height: 1.6;
+}
+.containeree .faq .box {
+    display: flex;
+    justify-content: space-around;
+}
+    .containeree .faq .box ul {
+        width: 50%;
+    }
+    @media (max-width:776px) {
+        .containeree .faq .box {
+    flex-direction: column;
+}
+    }
+
+.faq input {
+  width: 60%;
+  height: 60px;
+  font-size: 20px;
+  background-color: #fff;
+  box-shadow: 0px 2px 4px rgba(52, 67, 75, 0.2);
+  display: block;
+  padding: 0 20px;
+  margin-bottom: 40px;
+  -webkit-transition: box-shadow 0.1s linear;
+  transition: box-shadow 0.1s linear;
+}
+.faq input::-webkit-input-placeholder, .faq input::-moz-placeholder, .faq input:-ms-input-placeholder {
+  color: #a1bdcb !important;
+}
+.faq input:focus {
+  box-shadow: 0px 4px 8px rgba(52, 67, 75, 0.4);
+}
+.faq .highlight {
+  background-color: #fffd77;
+}
+.faq div > ul > li:not(:first-child) {
+  /* border-top: 1px solid #dcebed; */
+  margin-top: 4px;
+  padding-top: 8px;
+}
+.faq div > ul > li.is-hidden {
+  display: none;
+}
+.faq div > ul > li h2 {
+  font-size: 18px;
+  font-weight: 700;
+}
+.faq div > ul > li h2:hover, .faq div > ul > li h2:focus {
+  color: #a664b7;
+}
+.faq div > ul > li.is-active h2, .faq div > ul > li:target h2 {
+  color: #a664b7;
+}
+.faq div > ul > li > div {
+  display: none;
+}
+.faq div > ul > li.is-active > div,
+ .faq div > ul > li:target > div {
+  display: block;
+  margin-top: 10px;
+  width: 50%; 
+}
+
+
+.faq__notfound {
+  font-size: 20px;
+  font-style: italic;
+  display: none;
+}
+.faq__notfound.is-visible {
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
